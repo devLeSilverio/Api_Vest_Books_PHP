@@ -34,6 +34,14 @@ class Categoria extends  REST_Controller{
 		$this->response(['Registro alterado com sucesso!'], REST_Controller::HTTP_OK);
 	}
 
-
+	public function index_delete($id = 0){
+		if(!empty($id)){
+			$this->db->delete('tb_categoria',array('cd_categoria'=>$id)); //tem um array de dados
+			$this->response(['Registro deletado com sucesso!'], REST_Controller::HTTP_OK);
+		}else{
+			$this->db->delete('tb_categoria',array()); 
+			$this->response(['Registros deletados com sucesso!'], REST_Controller::HTTP_OK);
+		}
+	}
 
 }

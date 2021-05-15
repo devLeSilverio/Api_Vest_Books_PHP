@@ -1,0 +1,15 @@
+create table tb_categoria(
+
+    cd_categoria int AUTO_INCREMENT PRIMARY KEY,
+    nm_categoria varchar(50) not null,
+    ds_categoria longtext
+);
+
+create table tb_livros(
+    
+	 cd_livro int AUTO_INCREMENT PRIMARY KEY,
+     nm_autor varchar(100),
+     nm_livro varchar(200),
+     id_categoria int not null,
+     FOREIGN KEY(id_categoria) REFERENCES tb_categoria(cd_categoria)
+);

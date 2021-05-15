@@ -28,6 +28,12 @@ class Categoria extends  REST_Controller{
 	}
 
 
+	public function index_put($id){
+		$input = $this->put(); //o que ele receber vai ser atribuido ao put 
+		$this->db->update("tb_categoria",$input,array('cd_categoria'=>$id)); 
+		$this->response(['Registro alterado com sucesso!'], REST_Controller::HTTP_OK);
+	}
+
 
 
 }

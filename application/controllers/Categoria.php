@@ -21,6 +21,13 @@ class Categoria extends  REST_Controller{
 			$this->response($data, REST_Controller::HTTP_OK);
 	}
 
+	public function index_post(){
+		$input = $this->input->post();
+		$this->db->insert('tb_categoria',$input);
+		$this->response('Registro gravado com sucesso!', REST_Controller::HTTP_OK);
+	}
+
+
 
 
 }
